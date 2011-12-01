@@ -2,13 +2,13 @@
 <html class="no-js" lang="ja">
 <head>
 <meta charset="utf-8">
-<title></title>
+<title>jQuery.TmplDeck example</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 <script src="jquery.tmpldeck.js"></script>
 <script src="underscore-min.js"></script>
 <script>
-var deck = new $.TmplDeck('templates.html');
+var deck = $.TmplDeck('templates.html');
 deck.load().done(function(){
 
 	/* basic */
@@ -63,7 +63,7 @@ th,td{
 </style>
 </head>
 <body>
-<h1>jQuery.TmplDeck</h1>
+<h1><a href="https://github.com/Takazudo/jQuery.TmplDeck">jQuery.TmplDeck</a></h1>
 <p>depends on: jQuery, underscore.js</p>
 <p>see <a href="templates.html">template file</a></p>
 <div id="placeholder1"></div>

@@ -13,6 +13,9 @@
 (function($, window, document, ns, undefined){
 
 ns.TmplDeck = function(url, options){
+	if (!(this instanceof arguments.callee)){
+		return new ns.TmplDeck(url, options);
+	}
 	this._options = $.extend({}, this._options, options, {
 		url: url
 	});
