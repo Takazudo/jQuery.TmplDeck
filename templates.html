@@ -1,0 +1,31 @@
+templateFragmentId1 {{{
+	<div class="block">
+		<h2><%- title %></h2>
+		<p><%= content_noescape %></p>
+		<p><%- content_escape %></p>
+	</div>
+}}}
+
+これはあれだよーーーとかコメント書いてもOK
+templateFragmentId2 {{{
+	<div class="block">
+		<h2><%- title %></h2>
+		<table>
+			<% _(items).each(function(item, i){ %>
+				<tr>
+					<th><%- i %></th>
+					<td><%- item.title %></td>
+					<td><%- item.content %></td>
+				</tr>
+			<% }); %>
+		</table>
+	</div>
+}}}
+
+templateFragmentId3 {{{
+	<div class="block">
+		<p><%- content %></p>
+	</div>
+}}}
+
+" vim: set foldmarker=marker

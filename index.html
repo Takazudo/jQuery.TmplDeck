@@ -1,0 +1,82 @@
+<!doctype html>
+<html class="no-js" lang="ja">
+<head>
+<meta charset="utf-8">
+<title></title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script src="jquery.tmpldeck.js"></script>
+<script src="underscore-min.js"></script>
+<script>
+var deck = new $.TmplDeck('templates.html');
+deck.load().done(function(){
+
+	/* basic */
+	$(function(){
+		var tmpl1 = deck.draw('templateFragmentId1');
+		var src = _.template(tmpl1)({
+			title: 'TITLE de gesu yoooooo',
+			content_noescape: 'contents! <strong>contents</strong>!',
+			content_escape: 'contents! <strong>contents</strong>!'
+		});
+		$('#placeholder1').html(src);
+	});
+
+	/* tested with _.template */
+	$(function(){
+		$('#placeholder2').html(_.template(deck.draw('templateFragmentId1'))({
+			title: 'TITLE de gesu yoooooo',
+			content_noescape: 'contents! <strong>contents</strong>!',
+			content_escape: 'contents! <strong>contents</strong>!'
+		}));
+	});
+
+	/* _.template shortcut */
+	$(function(){
+		$('#placeholder3').append(deck.tmpl('templateFragmentId2', {
+			title: 'TITLE de gesu yoooooo',
+			items: [
+				{ title: 'title desu', content: 'content <b>desu</b>' },
+				{ title: 'title desu', content: 'content <b>desu</b>' },
+				{ title: 'title desu', content: 'content <b>desu</b>' },
+				{ title: 'title desu', content: 'content <b>desu</b>' }
+			]
+		}));
+	});
+
+});
+</script>
+<style>
+body{
+	font-family:sans-serif;
+	font-size:1.3em;
+}
+.block{
+	border:1px solid #000;
+	margin:10px;
+	padding:10px;
+}
+th,td{
+	border:1px solid #000;
+	padding:.25em .4em;
+}
+</style>
+</head>
+<body>
+<h1>jQuery.TmplDeck</h1>
+<p>depends on: jQuery, underscore.js</p>
+<p>see <a href="templates.html">template file</a></p>
+<div id="placeholder1"></div>
+<div id="placeholder2"></div>
+<div id="placeholder3"></div>
+<div id="placeholder4"></div>
+<script>
+/* ready fn test. this call back will be fired as soon as the deck was loaded */
+deck.ready(function(){
+	$('#placeholder4').append(deck.tmpl('templateFragmentId3', {
+		content: 'ready fn test'
+	}));
+});
+</script>
+</body>
+</html>
