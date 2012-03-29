@@ -1,0 +1,19 @@
+{
+  "name": "jQuery.TmplDeck",
+  "description": "is a template string storage. useful with underscore.js's template method.",
+  "version": "0.2",
+  "homepage": "https://github.com/Takazudo/jQuery.TmplDeck",
+  "author": {
+    "name": "\"Takazudo\" Takeshi Takatsudo",
+    "url": "http://takazudo.github.com/blog/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:Takazudo/jQuery.TmplDeck.git"
+  },
+  "licenses": [
+    {
+      "type": "MIT"
+    }
+  ]
+}

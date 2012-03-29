@@ -5,8 +5,8 @@
 <title>jQuery.TmplDeck example</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-<script src="jquery.tmpldeck.js"></script>
-<script src="underscore-min.js"></script>
+<script src="../jquery.tmpldeck.js"></script>
+<script src="../lib/underscore-min.js"></script>
 <script>
 var deck = $.TmplDeck('templates.html');
 deck.load().done(function(){
@@ -15,9 +15,9 @@ deck.load().done(function(){
 	$(function(){
 		var tmpl1 = deck.draw('templateFragmentId1');
 		var src = _.template(tmpl1)({
-			title: 'TITLE de gesu yoooooo',
-			content_noescape: 'contents! <strong>contents</strong>!',
-			content_escape: 'contents! <strong>contents</strong>!'
+			title: 'This is the title',
+			content_noescape: 'contents! without escape <strong>contents</strong>!',
+			content_escape: 'contents! with escape <strong>contents</strong>!'
 		});
 		$('#placeholder1').html(src);
 	});
@@ -25,16 +25,16 @@ deck.load().done(function(){
 	/* tested with _.template */
 	$(function(){
 		$('#placeholder2').html(_.template(deck.draw('templateFragmentId1'))({
-			title: 'TITLE de gesu yoooooo',
-			content_noescape: 'contents! <strong>contents</strong>!',
-			content_escape: 'contents! <strong>contents</strong>!'
+			title: 'This is the title',
+			content_noescape: 'contents! without escape <strong>contents</strong>!',
+			content_escape: 'contents! with escape <strong>contents</strong>!'
 		}));
 	});
 
 	/* _.template shortcut */
 	$(function(){
 		$('#placeholder3').append(deck.tmpl('templateFragmentId2', {
-			title: 'TITLE de gesu yoooooo',
+			title: 'This is the title',
 			items: [
 				{ title: 'title desu', content: 'content <b>desu</b>' },
 				{ title: 'title desu', content: 'content <b>desu</b>' },
