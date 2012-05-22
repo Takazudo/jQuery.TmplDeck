@@ -34,7 +34,7 @@ module.exports = function(grunt){
     },
     uglify: {
       all: {
-        src: '<config:coffee.dest>',
+        src: '<config:coffee.all.dest>',
         dest: 'jquery.tmpldeck.min.js'
       }
     },
