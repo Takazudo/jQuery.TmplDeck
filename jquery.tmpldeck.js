@@ -1,4 +1,4 @@
-/*! jQuery.TmplDeck - v0.2 -  5/23/2012
+/*! jQuery.TmplDeck - v0.2.1 -  5/23/2012
  * https://github.com/Takazudo/jQuery.TmplDeck
  * Copyright (c) 2012 "Takazudo" Takeshi Takatsudo; Licensed MIT */
 
