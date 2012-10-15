@@ -32,7 +32,7 @@
     draw: (id) ->
       cached = @_cache[id]
       if cached then return cached
-      re = new RegExp "(^|\\n)#{id}\\s\{\{\{\\r?\\n([\\s\\S]+?)\}\}\}"
+      re = new RegExp "(^|\\n)#{id}\\s\{\{\{\{\\r?\\n([\\s\\S]+?)\}\}\}\}"
       res = @_fetchedText.match(re)
       if res
         return (@_cache[id] = res[2])
