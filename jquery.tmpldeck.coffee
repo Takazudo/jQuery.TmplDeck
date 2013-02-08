@@ -1,4 +1,4 @@
-(($) -> # encapsulate plugin start
+do ($ = jQuery) -> # encapsulate plugin
 
   # main
 
@@ -50,4 +50,3 @@
   #
   $.TmplDeck = TmplDeck
 
-) jQuery # encapsulate plugin end
